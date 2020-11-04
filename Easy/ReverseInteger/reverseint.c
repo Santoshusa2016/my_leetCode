@@ -21,7 +21,7 @@ long reverse(int data){
     {
         int value = data%10;       
         *(arr + i ) = value;
-        data = data/=10;
+        data /= 10;
     }
    
     for (int i = 0; i < arrayLen; i++)

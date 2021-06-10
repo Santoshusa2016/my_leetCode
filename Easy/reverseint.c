@@ -5,6 +5,7 @@ int lenOfArray(int data){
     int m = data;
     int digit = 0;
     while (m) {
+        printf("Value of m %d", m);
         digit++; 
         // Truncate the last digit from the number 
         m /= 10; 
@@ -17,7 +18,7 @@ long reverse(int data){
     int *arr = (int *)malloc(4 * arrayLen);
     long retlongVal = 0;
 
-    for (int i = 0; i <= arrayLen-1; i++)
+    for (int i = 0; i < arrayLen; i++)
     {
         int value = data%10;       
         *(arr + i ) = value;

@@ -6,14 +6,31 @@ namespace leetCode
     {
         static void Main(string[] args)
         {
-            //Find maximum sum of non consecutive elements in array
-            /*
-            {5, 5, 10, 40, 50, 35}
+            //callHouseRobber();
+            //callTwoSums();
+            //callReverseLl();
+            callLenOfSubArray();
 
-            */
+            Console.ReadKey();
+            
+        }
+
+        public static void callHouseRobber(){
             SticklerThief prb = new SticklerThief();
             Console.WriteLine(prb.FindMaxSum(new int[]{ 2,1,1,2 }, 4));
-   
+        }
+
+        public static void callTwoSums(){
+            TwoSum prb = new TwoSum();
+            Console.WriteLine(prb.FindTargetWithHash(new int[]{ 3,2, 4}, 6));
+        }
+
+        public static void callLenOfSubArray(){
+            LengthOfLongestSubstring prb = new LengthOfLongestSubstring();
+            Console.WriteLine(prb.GetLongestSubstringLen("dvdf"));
+        }
+
+        public static void callReverseLl(){
             //reverse linked list
             LinkedList llist = new LinkedList();
             llist.head = new LinkedList.Node(1);
@@ -30,9 +47,6 @@ namespace leetCode
 
             //llist.pointerReverse();
             llist.callrecurrenceReverse();
-
-            Console.ReadKey();
-            
         }
     }
 }

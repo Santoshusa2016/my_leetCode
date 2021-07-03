@@ -3,7 +3,6 @@ using System;
 
  /*
 Problem 22 Failed Cases:  {1}, {1,2}, {2,6,2}, {1,2,2,4}, {2,1,1,2}
-Condition created failed {1,2,1,1}, {1,2,3,1}, {1,3,1,3,100}
 Edge cases: Array 1, 0
 
 Problem 23 TestCases: {2,3,2}, {1,2,3,1}
@@ -13,7 +12,7 @@ class SticklerThief
 {
    
 public int FindMaxSum(int[] arr, int n){       
- /*The logic is to determine what maximum amount a robber can steal at given point.*/
+ /*The idea is to determine what maximum amount a robber can steal at given point.*/
         int temp = 0;
         if(n == 0) return temp;
         if(n ==1)return arr[0];
@@ -62,5 +61,26 @@ public int robHouse(int[] arr, int startIndex, int endIndex){
         }
         return Math.Max(rob1, rob2);
 }
+
+
+//Failed Submissions:
+/*
+Cases: [1,2,3,1], [1,3,1,3,100], [1,2,1,1]
+Reason: The logic was more like add even and odd position numbers and return max
+*/
+  public int Rob(int[] arr) {
+        int n = arr.Length;        
+        int include=arr[0], exclude = 0, i=0, temp = 0;
+        
+        for (i = 1; i < n-1; i++)
+        {
+            temp = include;
+            include = (arr[i] + exclude);
+            exclude = temp;
+        } 
+        /* return max of incl and excl */
+        return Math.Max(include, exclude);
+        
+    }
 
 }

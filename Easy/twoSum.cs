@@ -37,7 +37,7 @@ public class TwoSum{
             for (int i = 0; i < nums.Length; i++)
             {
               int diffValue = target - nums[i];
-              if(ht.ContainsValue(diffValue)){
+              if(ht.ContainsValue(diffValue)){ //the main idea is dic has containsValue function
                   sumpair[0] = ht.FirstOrDefault(a => a.Value == diffValue).Key;
                   sumpair[1] = i;
               }

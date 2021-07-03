@@ -34,7 +34,7 @@ public class LengthOfLongestSubstring {
                     substr = substr+ nxtSubStr;
                 }
                 else{                    
-                    break;
+                    break; //exit the for loop 
                 }
             }
             maxlength = maxlength > substr.Length ? maxlength : substr.Length;
@@ -49,6 +49,7 @@ public class LengthOfLongestSubstring {
         if(s.Length <= 1 ) return s.Length;
         if(s.Length == 2)
         {
+            
             if (s.Substring(0,1) != s.Substring(1,1))
                 return 2;
             else return 1;

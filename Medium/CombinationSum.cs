@@ -24,12 +24,10 @@ public class CombinationSum {
     int tempSum = tempStore.Sum();
     for (int i = start; i < end; i++)
     {
-        if(candidates[i]+tempSum == target) {
-            /*Deep copy is created because if tempList changes the ref in main list changes
-            The candidate is not added because adding it to temp will ref which is not req for next iteration
-            */
+        if(candidates[i] + tempSum == target) { 
+            //Deep copy is created because if tempList changes the ref in main list changes
            var deepCopy = new List<int>(); 
-           tempStore.ForEach(a => deepCopy.Add(a));
+           tempStore.ForEach(a => deepCopy.Add(a));           
            deepCopy.Add(candidates[i]);
            uniquelist.Add(deepCopy);
         }
@@ -37,10 +35,11 @@ public class CombinationSum {
             
             if(candidates[i] + tempSum < target)
             {
-                tempStore.Add(candidates[i]); //Add item to stack and start exploration next - DFS
+                tempStore.Add(candidates[i]);
                 PrintLog(tempStore, "Push");
+                //Important recursive logic for DFS
                 FindCombination(candidates, target, i, end, tempStore,uniquelist);
-                tempStore.RemoveAt(tempStore.Count -1); //Remove item from Stack after exploration is completed
+                tempStore.RemoveAt(tempStore.Count -1); 
                 PrintLog(tempStore, "Pop");
 
             }
@@ -85,3 +84,12 @@ public class CombinationSum {
         return uniqueComb;
     }
 }
+
+/* Example
+Input: candidates = [2,3,6,7], target = 7
+Output: [[2,2,3],[7]]
+Explanation:
+2 and 3 are candidates, and 2 + 2 + 3 = 7. Note that 2 can be used multiple times.
+7 is a candidate, and 7 = 7.
+These are the only two combinations.
+*/

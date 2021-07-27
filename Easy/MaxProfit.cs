@@ -18,6 +18,7 @@ public class MaxProfit {
             }else if(prices[maxIndex] < prices[i]){
                 maxIndex = i;
             }
+            //The temp profit is created to hold the old max profit determined
             tempProfit = (prices[maxIndex] - prices[minIndex]);
             maxProfit = maxProfit > tempProfit
                         ? maxProfit: tempProfit;

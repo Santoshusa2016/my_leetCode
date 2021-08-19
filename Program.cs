@@ -10,20 +10,21 @@ namespace leetCode
             //callTwoSums();
             //callMaxProfit();
             //callContainsDuplicate();
+            //callMaxSubArray();
 
             //callHouseRobber();
             //callReverseLl();
             //callLenOfSubArray();
             //callCombinationSums();
-            callProductExceptSelf();
-
+            //callProductExceptSelf();
+            callMaxProdArray();
             Console.ReadKey();
             
         }
 
 
 
-        #region Easy
+    #region Easy
     public static void callTwoSums(){
         TwoSum prb = new TwoSum();
         Console.WriteLine(prb.FindTargetWithHash(new int[]{ 3,2, 4}, 6));
@@ -39,8 +40,15 @@ namespace leetCode
         ContainsDuplicate dups = new ContainsDuplicate();
         Console.WriteLine(dups.hasDuplicate(new int[]{1,2,3,1}));
     }
-        
+
+    private static void callMaxSubArray()
+    {
+        MaxSubArray prb = new MaxSubArray();
+        Console.WriteLine(prb.GetMaxSubArrayDC(new int[]{-2,3,0,2,-2,3}));
+
+    }  
     #endregion 
+
     #region Medium
     public static void callHouseRobber(){
         SticklerThief prb = new SticklerThief();
@@ -80,6 +88,13 @@ namespace leetCode
     public static void callProductExceptSelf(){
         ProductExceptSelf prob = new ProductExceptSelf();
         prob.GetProductExceptSelf(new int[]{1,2,3,4});
+    }
+
+    private static void callMaxProdArray()
+    {
+        MaxProdArray prb = new MaxProdArray();
+        Console.WriteLine(prb.GetMaxSubArrayKadens(new int[]{2,0,-1,8}));
+
     }
     #endregion        
     }

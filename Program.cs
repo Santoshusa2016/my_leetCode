@@ -17,7 +17,9 @@ namespace leetCode
             //callLenOfSubArray();
             //callCombinationSums();
             //callProductExceptSelf();
-            callMaxProdArray();
+            //callMaxProdArray();
+            //callMinRotatedArray();
+            callContainerMax();
             Console.ReadKey();
             
         }
@@ -96,6 +98,19 @@ namespace leetCode
         Console.WriteLine(prb.GetMaxSubArrayKadens(new int[]{2,0,-1,8}));
 
     }
+
+    private static void callMinRotatedArray()
+    {
+        MinimumRotatedArray prb = new MinimumRotatedArray();
+        Console.WriteLine(prb.FindMin(new int[]{4,5,6,7,0,1,2}));
+    }
+
+    private static void callContainerMax()
+    {
+        containerMaxWater prb = new containerMaxWater();
+        Console.WriteLine(prb.MaxArea(new int[]{1,8,6,2,5,4,8,3,7}));
+    }
+
     #endregion        
     }
 }

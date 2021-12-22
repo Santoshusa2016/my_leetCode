@@ -20,7 +20,7 @@ public class CombinationSum {
     //Brute Force - Tuned for TempList storage
     public void FindCombination(int[] candidates, int target
     , int start, int end, List<int> tempStore, IList<IList<int>> uniquelist) {
-
+    //The tempStore is used for maintaining list of nodes traversed in each iteration
     int tempSum = tempStore.Sum();
     for (int i = start; i < end; i++)
     {

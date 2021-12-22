@@ -21,9 +21,9 @@ public int FindMaxSum(int[] arr, int n){
                 int rob1=0, rob2 = arr[0], i = 0;                
                 for (i = 1; i < n; i++)
                 {
-                        temp = Math.Max(arr[i]+rob1 , rob2);
-                        rob1 = rob2;
-                        rob2 = temp;
+                    temp = Math.Max(arr[i]+rob1 , rob2);
+                    rob1 = rob2;
+                    rob2 = temp;
                 }
 
                 /* return max of incl and excl */

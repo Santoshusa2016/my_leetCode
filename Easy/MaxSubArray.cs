@@ -19,8 +19,8 @@ public class MaxSubArray
 
     /* Divide and Conquer - recurrsion
     Failed Cases:
-    [8,-19,5,-4,20] -> Exp:21 Act: 20 (Instead of counting Left/Right I was getting max
-    OF left or right by using comparison)
+    [8,-19,5,-4,20] -> Exp:21 Act: 20 (Instead of counting max of Left & Right I was getting 
+    max of either left or right by using comparison)
     [-2,3,0,2,-2,3] -> Exp:6 Act:5: (Since we were stopping when sum decreased we never check 
     if there is any higher value after the decrease. This is why we need to find max and not stop when 
     )
@@ -56,6 +56,11 @@ public class MaxSubArray
             // if(leftMax > (leftMax + nums[i]))
             // break;
             // else
+            
+            /*You cannot apply kadens logic because Kadens use either current/ curr+prev for
+            max. If current is taken then you are breaking the contiguos
+            
+            */
             tempMax += nums[i];
             leftMax = (leftMax > tempMax) ? leftMax : tempMax;
         }

@@ -2,26 +2,26 @@ using System;
 
 public class MaxSubArray
 {
-
-
     //Dynammic Programming
      public int GetMaxSubArrayKadens(int[] nums){
-         if(nums.Length == 0) return 0;
-        int prevMax, maxValue;
-        prevMax = maxValue = nums[0];        
+        if(nums.Length == 0) return 0;
+        int currMax, maxValue;
+        currMax = maxValue = nums[0];        
         for (int i = 1; i < nums.Length; i++)
         {
-            prevMax = Math.Max((nums[i]+prevMax), nums[i]);
-            maxValue = prevMax > maxValue ? prevMax: maxValue;
+            //Determine max value in each iteration
+            currMax = Math.Max((nums[i]+currMax), nums[i]);
+            maxValue = currMax > maxValue ? currMax: maxValue;
         }
         return maxValue;
     }
 
     /* Divide and Conquer - recurrsion
     Failed Cases:
-    [8,-19,5,-4,20] -> Exp:21 Act: 20 (Instead of counting max of Left & Right I was getting 
+    [8,-19,5,-4,20] -> 33
+    1 Act: 20 (Instead of counting max of Left & Right I was getting 
     max of either left or right by using comparison)
-    [-2,3,0,2,-2,3] -> Exp:6 Act:5: (Since we were stopping when sum decreased we never check 
+    [-2,3,0,2,-2,3] -> Exp:6 Act:5: (Since we were stopping when sum decreased we never checked 
     if there is any higher value after the decrease. This is why we need to find max and not stop when 
     )
     */
@@ -29,37 +29,36 @@ public class MaxSubArray
         return FindMax(0, (nums.Length - 1), nums);
     }
 
-    public int FindMax(int startIndex, int endIndex, int[] nums){      
-        if (startIndex != endIndex) 
+    public int FindMax(int startIndex, int endIndex, int[] nums){ 
+        //base condition
+        int retValue = 0;
+        if(startIndex == endIndex)
+            retValue = nums[startIndex];
+        else if (startIndex < endIndex) 
         {
             int median = (startIndex + endIndex)/2;
             int a, b, c;
-            Console.WriteLine("FindMax startIndex:{0},endIndex:{1}, median:{2}", startIndex, endIndex, median);
+            Console.WriteLine("FindMax startIndex:{0},endIndex:{1}, median:{2}"
+            , startIndex, endIndex, median);
 
             a = FindMax(startIndex, median, nums);
             b = FindMax(median + 1, endIndex, nums);            
             c = FindCrossMax(startIndex, median, endIndex, nums);
             Console.WriteLine("FindMax a:{0}, b:{1}, Max:{2}", a, b, c);
-            return Math.Max(Math.Max(a,b), c);
+            retValue = Math.Max(Math.Max(a,b), c);            
         }
-        else{
-            return nums[startIndex]; 
-        }
+        return retValue;
     }
 
     public int FindCrossMax(int startIndex, int median, int endIndex, int[] nums){
         int leftMax = nums[median];
         int rightMax = nums[median+1];
+
         int tempMax = leftMax;
         for (int i = (median -1); i >= startIndex; i--)
         {
-            // if(leftMax > (leftMax + nums[i]))
-            // break;
-            // else
-            
             /*You cannot apply kadens logic because Kadens use either current/ curr+prev for
-            max. If current is taken then you are breaking the contiguos
-            
+            max. If current is taken then you are breaking the contiguos   
             */
             tempMax += nums[i];
             leftMax = (leftMax > tempMax) ? leftMax : tempMax;
@@ -68,9 +67,6 @@ public class MaxSubArray
         tempMax = rightMax;
         for (int i = (median+2); i <= endIndex; i++)
         {
-            // if(rightMax > (rightMax + nums[i]))
-            // break;
-            // else
             tempMax += nums[i];
             rightMax = (rightMax > tempMax) ? rightMax : tempMax;
         }

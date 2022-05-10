@@ -20,6 +20,7 @@ public class MinimumRotatedArray
             int right = FindMin(nums, median + 1, end);
             if (right < left)
             {
+                 //there are 2 portions of array, one on left which is sorted and one on right which is also sorted and has less value
                 minFound = true;
                 minValue = right;
             }
@@ -35,13 +36,14 @@ public class MinimumRotatedArray
     public int FindMinWithBS(int[] nums){
         int left = 0, right = nums.Length - 1;
         int median;
+        
         /*left<=right did not work, because when all are in same index the loops goes 
         into infinite loop*/
         while (left < right)
         {
             median = (left + right)/2;
             if(nums[median] > nums[right]){
-                /*Because right < median can skip median & check from median+1*/
+                /*Because right < median we can skip median & check from median+1*/
                 left = median + 1;
             }
             else{
@@ -57,4 +59,6 @@ public class MinimumRotatedArray
 Cases Tested: [4,5,6,7,0,1,2], [11,13,15,17]
 Failed cases: [3,-1,4] Exp 4, Act 3
 [-2,0,-1] Exp 0, Act 1
+Hint: The idea is to find the pivot/median and determine which side could have the least element. If median is greater
+than start then least is on right side.
 */

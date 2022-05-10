@@ -32,21 +32,19 @@ public class TwoSum{
     */
     public int[] FindTargetWithHash(int[] nums, int target) {
             Dictionary<int,int> ht = new Dictionary<int,int>(nums.Length);
-            int[] sumpair = new int[2];
-
             for (int i = 0; i < nums.Length; i++)
             {
               int diffValue = target - nums[i];
               if(ht.ContainsValue(diffValue)){ 
                   //the main idea is dic has containsValue function
-                  sumpair[0] = ht.FirstOrDefault(a => a.Value == diffValue).Key;
-                  sumpair[1] = i;
+                  ht.Add(i, nums[i]);
+                  break;
               }
               else{
                   ht.Add(i, nums[i]);
               }  
             }
-        return sumpair;
+        return new int[]{ht.Values.ElementAt(0), ht.Values.ElementAt(1)};
     }
 
 }

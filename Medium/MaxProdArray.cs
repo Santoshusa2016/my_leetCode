@@ -6,7 +6,7 @@ public class MaxProdArray
      public int GetMaxSubArrayKadens(int[] nums){
         if(nums.Length == 0) return 0;
         
-        //create temp variables to store current, min and max
+        //At every index we need to maintain max and min value. This will determine if at given index which one to use
         int tempMin, tempMax, maxValue, tempCurrent;
 
         tempMax = maxValue = nums[0];        
@@ -14,22 +14,26 @@ public class MaxProdArray
  
         for (int i = 1; i < nums.Length; i++)
         {
-                if (tempMin == 0 && tempMax == 0){
-                    tempMax = tempMin = 1;
-                }
-                tempMin = (tempMin * nums[i]); 
-                tempMax = (tempMax * nums[i]);
+            //if (tempMin == 0 && tempMax == 0){
+            if (nums[i] == 0){
+                //anything multipled by 0 is 0, so reset min, max to 1
+                tempMax = tempMin = 1;
+                continue;
+            }
 
-                if(tempMin > tempMax){
-                    //Swap min and max
-                    tempCurrent = tempMax;
-                    tempMax = tempMin;
-                    tempMin = tempCurrent;
-                }
+            tempMin = (tempMin * nums[i]); 
+            tempMax = (tempMax * nums[i]);
 
-                //Compare min and max with the current element value
-                tempMax = Math.Max(tempMax, nums[i]);
-                tempMin = Math.Min(tempMin, nums[i]);
+            if(tempMin > tempMax){
+                //Swap min and max
+                tempCurrent = tempMax;
+                tempMax = tempMin;
+                tempMin = tempCurrent;
+            }
+
+            //Compare min and max with the current element value
+            tempMax = Math.Max(tempMax, nums[i]);
+            tempMin = Math.Min(tempMin, nums[i]);
 
             //update the maximum value
             tempCurrent = Math.Max(tempMax, tempMin);

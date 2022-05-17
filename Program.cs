@@ -18,6 +18,7 @@ namespace leetCode
             //callValidPalindrome();
             //callValidParantheses();
             //callReverseLinkedList();
+            callMergeLinkedList();
 
             //callHouseRobber();
             //callReverseLl();
@@ -31,6 +32,7 @@ namespace leetCode
             //callLongestCommonSubSeq();
 
 
+            
             callApproaches();
             Console.ReadKey();
             
@@ -93,6 +95,18 @@ namespace leetCode
         {
             reverseLinkedlist prob = new reverseLinkedlist(new int[] {1,2,3,4,5});
             var response = prob.ReverseList(new ListNode(1));
+            Console.WriteLine(response);
+        }
+
+        private static void callMergeLinkedList()
+        {
+            MergeSortedList prob = new MergeSortedList();
+            ListNode link1 = new ListNode(1,
+                new ListNode(2, new ListNode(3,null)));
+            ListNode link2 = new ListNode(1,
+               new ListNode(3, new ListNode(4, null)));
+
+            var response = prob.MergeTwoListsOpt(link1, link2);
             Console.WriteLine(response);
         }
         #endregion

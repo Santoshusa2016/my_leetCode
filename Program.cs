@@ -18,7 +18,9 @@ namespace leetCode
             //callValidPalindrome();
             //callValidParantheses();
             //callReverseLinkedList();
-            callMergeLinkedList();
+            //callMergeLinkedList();
+            callInvertBTree();
+
 
             //callHouseRobber();
             //callReverseLl();
@@ -38,7 +40,8 @@ namespace leetCode
             
         }
 
-    #region Easy
+
+        #region Easy
         public static void callTwoSums(){
             TwoSum prb = new TwoSum();
             Console.WriteLine(prb.FindTargetWithHash(new int[]{ 3,2, 4}, 6));
@@ -109,6 +112,19 @@ namespace leetCode
             var response = prob.MergeTwoListsOpt(link1, link2);
             Console.WriteLine(response);
         }
+
+        private static void callInvertBTree()
+        {
+            InvertBTree prob = new InvertBTree();
+            TreeNode node = new TreeNode()
+            {
+                val = 4,
+                left = new TreeNode(2, new TreeNode(1), new TreeNode(3)),
+                right = new TreeNode(7, new TreeNode(6), new TreeNode(9))
+            };
+            var response = prob.Solution(node);
+            Console.WriteLine(response);
+        }
         #endregion
 
         #region Medium
@@ -126,25 +142,6 @@ namespace leetCode
         CombinationSum prb = new CombinationSum();
         var retval = prb.FindCombination(new int[]{2,7,6,3,5,1}, 9);
         Console.ReadKey();
-    }
-
-    public static void callReverseLl(){
-        //reverse linked list
-        LinkedList llist = new LinkedList();
-        llist.head = new LinkedList.Node(1);
-
-        LinkedList.Node nodeA = new LinkedList.Node(2);
-        llist.head.nextNode = nodeA;
-
-        LinkedList.Node nodeB= new LinkedList.Node(3);
-        nodeA.nextNode = nodeB;
-        LinkedList.Node nodeC = new LinkedList.Node(4);
-        nodeB.nextNode = nodeC;
-        LinkedList.Node nodeD = new LinkedList.Node(5);
-        nodeC.nextNode = nodeD;
-
-        //llist.pointerReverse();
-        llist.callrecurrenceReverse();
     }
 
     public static void callProductExceptSelf(){

@@ -15,6 +15,7 @@ namespace leetCode.Easy
         {
             //remove spaces and special chars from string
             string updStr = Regex.Replace(s, "[^a-zA-Z0-9]", String.Empty).Replace(" ","").ToLower();
+
             int i, j;
             i = 0; j = updStr.Length - 1;
             while (i<=j)

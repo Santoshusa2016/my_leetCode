@@ -4,10 +4,8 @@ public class ProductExceptSelf
     Input: nums = [1,2,3,4]
     Output: [24,12,8,6]
     Explanation: The logic is to use Prefix, Suffix of array.
-    Given the index, in output mutiply the prev * suffix value which is required for that position
 */
-    public int[] GetProductExceptSelf(int[] nums){
-        //hint: Prefix Sum and Suffix Sum in Arrays        
+    public int[] GetProductExceptSelf(int[] nums){      
         int[] outputArray = new int[nums.Length];
         outputArray[0] = 1; 
 
@@ -16,6 +14,8 @@ public class ProductExceptSelf
             //Prefix-Product till index i     
             outputArray[i] = outputArray[i-1] * nums[i-1];
         }
+
+
 
         int tempMultiplier = 1;
         for (int i = nums.Length-2; i >= 0; i--)

@@ -2,6 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 public class TwoSum{
+    /*
+Test Cases:
+[2,7,11,15]
+9
+[3,2,4]
+6
+[3,3]
+6
+*/
     public int[] FindTarget(int[] nums, int target) {
 
             int[] targetIndex = new int[2];
@@ -21,30 +30,26 @@ public class TwoSum{
         return targetIndex;
     }
 
-    /*
-    Test Cases:
-    [2,7,11,15]
-    9
-    [3,2,4]
-    6
-    [3,3]
-    6
-    */
     public int[] FindTargetWithHash(int[] nums, int target) {
-            Dictionary<int,int> ht = new Dictionary<int,int>(nums.Length);
-            for (int i = 0; i < nums.Length; i++)
+        Dictionary<int, int> uniqueList = new Dictionary<int, int>();
+        
+        //in selection sort we iterate over list to determine ans
+        //here we create a new list based on old one, but before adding we check if we get target
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            int diffValue = target - nums[i];
+            if (uniqueList.ContainsValue(diffValue))
             {
-              int diffValue = target - nums[i];
-              if(ht.ContainsValue(diffValue)){ 
-                  //the main idea is dic has containsValue function
-                  ht.Add(i, nums[i]);
-                  break;
-              }
-              else{
-                  ht.Add(i, nums[i]);
-              }  
+                int index1 = uniqueList.FirstOrDefault(a => a.Value == diffValue).Key;
+                return new int[] { index1, i };
             }
-        return new int[]{ht.Values.ElementAt(0), ht.Values.ElementAt(1)};
+            else
+            {
+                uniqueList.Add(i, nums[i]);
+            }
+        }
+        return new int[] { 0, 0 };
     }
 
 }

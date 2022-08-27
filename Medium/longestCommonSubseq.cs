@@ -1,14 +1,6 @@
 using System;
 
 
-//Hint Dynamic Programming, Binary Search
-/*
-https://github.com/mission-peace/interview/wiki
-Tushar: [3,4,-1,0,6,2,3], [2,5,1,8,3]
-(Hint: Start the seq with first element j and next element i)
-Neetcode: [1,2,4,3]
-Failed cases: [0,1,0,3,2,3]
-*/
 public class LongestCommonSubseq {
     public int GetLongestCommonSubseq(string text1, string text2){
         //memoize (Storing result of recursion is called DP)
@@ -30,12 +22,8 @@ public class LongestCommonSubseq {
                 maxValue = memoizeArray[i,j]>maxValue? memoizeArray[i,j] :maxValue;  
             }                  
         }
-
         //Find common sub sequence from matrix
-
         return maxValue; //Following Kadens rules in multi dimension
 
-    }
-
-    
+    }    
 }

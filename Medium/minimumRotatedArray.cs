@@ -1,3 +1,6 @@
+/*
+ * Ex: [4,5,6,7,0,1,2]
+ */
 public class MinimumRotatedArray
 {
     public int FindMin(int[] nums) {
@@ -7,9 +10,11 @@ public class MinimumRotatedArray
     private int FindMin(int[] nums, int start, int end){
         int minValue = 0;
         bool minFound = false;
+
         if(minFound)
             return minValue;
 
+        //base criteria
         if(start == end){
             return nums[start];
         }
@@ -32,13 +37,13 @@ public class MinimumRotatedArray
     }
 
 
-//This method using BS with Time complexity O(logN) using while loop
+   //This method using BS with Time complexity O(logN) using while loop
     public int FindMinWithBS(int[] nums){
         int left = 0, right = nums.Length - 1;
         int median;
         
-        /*left<=right did not work, because when all are in same index the loops goes 
-        into infinite loop*/
+        /*left<=right did not work, because when both are in same index the loops goes 
+        into infinite*/
         while (left < right)
         {
             median = (left + right)/2;
@@ -51,7 +56,7 @@ public class MinimumRotatedArray
                 right = median;
             }            
         }
-        return nums[right];
+        return nums[right]; //you could also use left because both are same
     }
 }
 

@@ -7,7 +7,7 @@ namespace leetCode.Easy
     internal class ValidParentheses
     {
         /*
-         * Hint: Create a dictinoary to save mappings and use stack to find last item added
+         * Hint: Create a dictionary to save mappings and use stack to find last item added
          * failed cases: ){, 
          */
         public bool IsValid(string s)

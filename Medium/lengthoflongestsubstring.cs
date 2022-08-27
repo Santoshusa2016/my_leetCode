@@ -1,4 +1,7 @@
-//Using Selection sort algorithm
+/*Using Selection sort algorithm
+ * 
+ * Hint: Hash Table, Sliding window
+ * */
 public class LengthOfLongestSubstring {
     public int GetLongestSubStringLen(string s) {
         int maxlength = 0;
@@ -29,8 +32,6 @@ public class LengthOfLongestSubstring {
         }
         return maxlength;
     }
-
-
     
     public int GetLongestSubstringLen(string s) {
         int maxlength = 0, i = 0;
@@ -46,7 +47,7 @@ public class LengthOfLongestSubstring {
         }
 
         while (i < s.Length)
-        {    
+        {
             char check = s[i]; 
             if(!uniqueChar.Contains(check)){
                 uniqueChar = uniqueChar + check;
@@ -61,7 +62,3 @@ public class LengthOfLongestSubstring {
         return maxlength;
     }
 }
-
-/*
-Cases Tested: abcabcbb, pwwkew, " ", aab
-*/

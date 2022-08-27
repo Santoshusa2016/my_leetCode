@@ -33,7 +33,7 @@ public int FindMaxSum(int[] arr, int n){
 }
 
 public int FindMaxSum(int[] arr){       
- /*The logic in code is to rob once without 1 house and once without last house 
+ /*The logic is to rob once without 1 house and once without last house 
  The logic to rob without 1 & last house wont work because, if you choose either 2/ last house 
  you cannot choose 1 or last again since they are adjacent
  */

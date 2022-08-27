@@ -6,24 +6,25 @@ namespace leetCode.Easy
 {
     internal class reverseLinkedlist
     {
-        List<ListNode> singlyLinkedList = new List<ListNode>();
+        List<LinkedList.ListNode> singlyLinkedList = new List<LinkedList.ListNode>();
         public reverseLinkedlist(int[] linkedarray)
-        {            
-            for (int i = 0; i <= linkedarray.Length-1; i++)
+        {
+            for (int i = 0; i <= linkedarray.Length - 1; i++)
             {
-                singlyLinkedList.Add(new ListNode(linkedarray[i]));
+                singlyLinkedList.Add(new LinkedList.ListNode(linkedarray[i]));
             }
 
-            for (int i = 0; i <= singlyLinkedList.Count-1; i++)
+            for (int i = 0; i <= singlyLinkedList.Count - 1; i++)
             {
-                if(i != (singlyLinkedList.Count-1))
+                if (i != (singlyLinkedList.Count - 1))
                     singlyLinkedList[i].next = singlyLinkedList[i + 1];
             }
         }
-        public ListNode ReverseList(ListNode head)
+
+        public LinkedList.ListNode ReverseList(LinkedList.ListNode head)
         {
             if (head == null) return null;
-            ListNode next, current, previous;
+            LinkedList.ListNode next, current, previous;
             next = current = singlyLinkedList[0];
             previous = null;
 
@@ -42,15 +43,20 @@ namespace leetCode.Easy
         }
     }
 
-     public class ListNode {
-          public int val;
-          public ListNode next;
-          public ListNode(int val=0, ListNode next=null) {
-              this.val = val;
-              this.next = next;
-          }
-      }
-     
+    public class LinkedList
+    {
+        public ListNode Head { get; set; }
+        public class ListNode
+        {
+            public int val;
+            public ListNode next;
+            public ListNode(int val = 0, ListNode next = null)
+            {
+                this.val = val;
+                this.next = next;
+            }
+        }
+    }
 
 }
 

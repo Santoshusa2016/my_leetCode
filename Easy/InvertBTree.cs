@@ -13,12 +13,11 @@ namespace leetCode.Easy
         public TreeNode Solution(TreeNode root)
         {
             //base case
-
             //if (root == null || root.left == null || root.right == null)//3 
             if (root == null)
                 return root;//2
 
-            var tempValue = root.left; //since both right and left are obj they can accept null
+            var tempValue = root.left;
             root.left = root.right;
             root.right = tempValue;
             Solution(root.left); //explore child nodes

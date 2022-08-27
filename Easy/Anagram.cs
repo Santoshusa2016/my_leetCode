@@ -8,13 +8,14 @@ namespace leetCode.Easy
     internal class Anagram
     {
         /*
-         * cases: anagram, nagaram (using string1, use all and create a new word)
+         * cases: anagram, nagaram (using all chars of string1 create a new word)
          * failed cases: [rat,car], [a, ab], [ab, a]
          * took too long
          */
         public bool isAnagram(string s, string t)
         {
-            
+            if (s.Length != t.Length) return false;
+
             while (s.Length > 0)
             {
                 if (t.Length > 0)

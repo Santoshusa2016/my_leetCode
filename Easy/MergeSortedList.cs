@@ -6,22 +6,22 @@ namespace leetCode.Easy
 {
     internal class MergeSortedList
     {
-        public ListNode MergeTwoLists(ListNode list1, ListNode list2)
+        public LinkedList.ListNode MergeTwoLists(LinkedList.ListNode list1, LinkedList.ListNode list2)
         {
-            List<ListNode> sortedNodes = new List<ListNode>();
+            List<LinkedList.ListNode> sortedNodes = new List<LinkedList.ListNode>();
 
             while (list1 != null && list2 != null)
             {
                 //when list1 value is lesser
                 while ((list1 != null && list2 != null) && list1.val <= list2.val)
                 {
-                    sortedNodes.Add(new ListNode(list1.val));
+                    sortedNodes.Add(new LinkedList.ListNode(list1.val));
                     list1 = list1.next;                    
                 }
 
                 while ((list1 != null && list2 != null) && list1.val > list2.val)
                 {
-                    sortedNodes.Add(new ListNode(list2.val));
+                    sortedNodes.Add(new LinkedList.ListNode(list2.val));
                     list2 = list2.next;
                 }
             }
@@ -29,14 +29,14 @@ namespace leetCode.Easy
             //If any item from list1 is not added
             while (list1 != null)
             {
-                sortedNodes.Add(new ListNode(list1.val));
+                sortedNodes.Add(new LinkedList.ListNode(list1.val));
                 list1 = list1.next;
             }
 
             //If any item from list2 is not added
             while (list2 != null)
             {
-                sortedNodes.Add(new ListNode(list2.val));
+                sortedNodes.Add(new LinkedList.ListNode(list2.val));
                 list2 = list2.next;
             }
 
@@ -53,7 +53,7 @@ namespace leetCode.Easy
             return sortedNodes[0];
         }
 
-        public ListNode MergeTwoListsRec(ListNode l1, ListNode l2)
+        public LinkedList.ListNode MergeTwoListsRec(LinkedList.ListNode l1, LinkedList.ListNode l2)
         {
             //base condition
             if (l1 == null)
@@ -75,13 +75,13 @@ namespace leetCode.Easy
         }
 
 
-        public ListNode MergeTwoListsOpt(ListNode l1, ListNode l2)
+        public LinkedList.ListNode MergeTwoListsOpt(LinkedList.ListNode l1, LinkedList.ListNode l2)
         {
             // base case validations
             if (l1 == null) return l2;
             if (l2 == null) return l1;
 
-            var newNode = new ListNode(0); // Creating this dummy node ease the logic
+            var newNode = new LinkedList.ListNode(0); // Creating this dummy node ease the logic
             var tempPointer = newNode; //tempPointer used for pointing to next node
 
             while (l1 != null && l2 != null)

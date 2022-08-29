@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using leetCode.Easy;
 using leetCode.Examples;
 using leetCode.Examples.Maths;
+using leetCode.Medium;
 
 namespace leetCode
 {
@@ -35,7 +36,7 @@ namespace leetCode
             //callContainerMax();
             //callLongestSubSeq();
             //callLongestCommonSubSeq();
-
+            callUniquePath();
 
 
             //callApproaches();
@@ -44,7 +45,9 @@ namespace leetCode
 
 
             //callMinValue();
-            callNinjaCandies();
+            //callNinjaCandies();
+
+
             Console.ReadKey();
 
         }
@@ -214,6 +217,14 @@ namespace leetCode
             LongestCommonSubseq prb = new LongestCommonSubseq();
             Console.WriteLine(prb.GetLongestCommonSubseq("stone", "longest"));
         }
+
+        private static void callUniquePath()
+        {
+            //(3,2) , (3,7,)
+            uniquePaths prb = new uniquePaths();
+            Console.WriteLine(prb.Solve(3, 2));
+        }
+
         #endregion
 
         #region Maths
@@ -249,6 +260,8 @@ namespace leetCode
             var retVal = prb.Solve(new int[] {1,2}, 2, 3);
             Console.WriteLine("the retVal is: " + retVal);
         }
+
+
         #endregion
     }
 }

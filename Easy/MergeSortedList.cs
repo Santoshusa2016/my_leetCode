@@ -4,6 +4,13 @@ using System.Text;
 
 namespace leetCode.Easy
 {
+    /*
+    * Question:
+    * Hint:
+    * Test cases: 
+    * Failed cases: 
+    * Explain:
+    */
     internal class MergeSortedList
     {
         public LinkedList.ListNode MergeTwoLists(LinkedList.ListNode list1, LinkedList.ListNode list2)

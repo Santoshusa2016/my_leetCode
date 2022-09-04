@@ -4,6 +4,13 @@ using System.Text;
 
 namespace leetCode.Easy
 {
+    /*
+    * Question:
+    * Hint:
+    * Test cases:
+    * Failed cases:
+    * Explain:
+    */
     internal class reverseLinkedlist
     {
         List<LinkedList.ListNode> singlyLinkedList = new List<LinkedList.ListNode>();

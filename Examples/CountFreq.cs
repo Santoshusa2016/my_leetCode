@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace leetCode.Easy
+namespace leetCode.Examples
 {
     /*
      * https://www.geeksforgeeks.org/counting-frequencies-of-array-elements/
@@ -14,11 +14,9 @@ namespace leetCode.Easy
         {
             bool[] visited = new bool[n];
 
-            // Traverse through array elements and
-            // count frequencies
+            // Traverse through array elements and count frequencies
             for (int i = 0; i < n; i++)
             {
-
                 // Skip this element if already processed
                 if (visited[i] == true)
                     continue;
@@ -40,8 +38,7 @@ namespace leetCode.Easy
         public void solveV2(int[] arr, int n)
         {
             //auxillary space
-            Dictionary<int, int> freq
-                = new Dictionary<int, int>();
+            Dictionary<int, int> freq = new Dictionary<int, int>();
 
             // Traverse through array elements and count
             // frequencies

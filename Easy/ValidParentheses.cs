@@ -4,12 +4,16 @@ using System.Text;
 
 namespace leetCode.Easy
 {
+    /*
+    * Question:https://leetcode.com/problems/valid-parentheses/
+    * Hint:Create a dict to save mappings and use stack to find last item added
+    * Test cases:
+    * Failed cases:
+    * Explain:
+    */
     internal class ValidParentheses
     {
-        /*
-         * Hint: Create a dictionary to save mappings and use stack to find last item added
-         * failed cases: ){, 
-         */
+
         public bool IsValid(string s)
         {
             if (s.Length%2 != 0) return false; //every open must have closing brackets

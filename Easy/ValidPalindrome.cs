@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -6,11 +7,14 @@ using System.Text.RegularExpressions;
 namespace leetCode.Easy
 {
     /*
-     * Hint: Two pointer, quick sort
-     */
+    * Question:https://leetcode.com/problems/valid-palindrome/
+    * Hint:Two pointer, quick sort
+    * Test cases:
+    * Failed cases:
+    * Explain:
+    */
     internal class ValidPalindrome
-    {
-        
+    {        
         public bool IsPalindrome(string s)
         {
             //remove spaces and special chars from string

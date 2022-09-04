@@ -5,16 +5,12 @@ using System.Text;
 namespace leetCode.Easy
 {
     /*
-     * codingninjas - 21051
-     * cases * 2,5 => 10
-             * 2,99 => 99
-             * 3,4 => 100
-             * 5,3 = 10002 *
-             * 4,55 => 1045
-             * 2,99 => 99
-             * 2
-             * 1,1 => 1
-     */
+    * Question: codingninjas - 21051
+    * Hint:
+    * Test cases: [2,5] [2,99] [3,4] [5,3] [4,55] [2,99], 2, [1,1]
+    * Failed cases: 
+    * Explain:
+    */
     internal class MinValue
     {
         public double? Solve(int a, int? b = null)

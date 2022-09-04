@@ -6,10 +6,12 @@ using System.Text;
 namespace leetCode.Easy
 {
     /*
-     * Array[2,5,1,7,4], X=4. If sum(subarray L)<=X then add length.
-     * [2 5 1 7 4] 5, 4
-     * [1 2] 2, 3
-     */
+    * Question: codingninjas-21051
+    * Hint: Array[2,5,1,7,4], X=4. If sum(subarray L)<=X then add length.
+    * Test cases: [2 5 1 7 4] 5, 4
+    * Failed cases: 
+    * Explain:
+    */
     internal class NinjaCandies
     {
         public int Solve(int[] a, int len, int targ)

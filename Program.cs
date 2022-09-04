@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using leetCode.Daily;
 using leetCode.Easy;
 using leetCode.Examples;
 using leetCode.Examples.Maths;
@@ -36,7 +37,7 @@ namespace leetCode
             //callContainerMax();
             //callLongestSubSeq();
             //callLongestCommonSubSeq();
-            callUniquePath();
+            //callUniquePath();
 
 
             //callApproaches();
@@ -47,6 +48,8 @@ namespace leetCode
             //callMinValue();
             //callNinjaCandies();
 
+
+            callNumsSameConsecDiff();
 
             Console.ReadKey();
 
@@ -261,7 +264,15 @@ namespace leetCode
             Console.WriteLine("the retVal is: " + retVal);
         }
 
+        #endregion
 
+
+        #region daily challenge
+        private static void callNumsSameConsecDiff()
+        {
+            NumsSameConsecDiff prb = new NumsSameConsecDiff();
+            prb.Driver(2,1);
+        }
         #endregion
     }
 }

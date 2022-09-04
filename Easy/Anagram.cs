@@ -5,13 +5,15 @@ using System.Linq;
 
 namespace leetCode.Easy
 {
+    /*
+    * Question: https://leetcode.com/problems/valid-anagram/
+    * Hint:
+    * Test cases:
+    * Failed cases:[rat,car], [a, ab], [ab, a]
+    * Explain: anagram, nagaram (using all chars of string1 create a new word)
+    */
     internal class Anagram
-    {
-        /*
-         * cases: anagram, nagaram (using all chars of string1 create a new word)
-         * failed cases: [rat,car], [a, ab], [ab, a]
-         * took too long
-         */
+    {       
         public bool isAnagram(string s, string t)
         {
             if (s.Length != t.Length) return false;

@@ -88,15 +88,20 @@ namespace leetCode.Daily
                 return;
             }
 
+            //step 02: given 1st digit num iterate over digits 0-9 to find diff
             for (int i = 0; i <= 9; i++)
             {
                 int lastDigit = num % 10;
                 if (Math.Abs(lastDigit - i) == diff)
                 {
+                    //step 03: continue the DFS for next number by recursive alg
                     num = num * 10 + i;
                     FindNumber(num, noOfDigits, diff, ref numbers);
+
+                    /*step 04: remove the last digit added & continue to explore remaining num ex:[2,1]
+                     *Ex: input:[2,1]: when 1st digit is 1 the next set can be [1,0][1,2]
+                     */
                     num = num / 10;
-                    //return; input:[2,1]: when 1st digit is 1 the next set can be [1,0][1,2], but return will exit after 1 case
                 }
             }
         }

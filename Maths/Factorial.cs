@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace leetCode.Examples
+namespace leetCode.Maths
 {
-    internal class Approach
+    internal class Factorial
     {
 
         public int FactorialBottomUp(int num)
@@ -12,7 +12,7 @@ namespace leetCode.Examples
             /*
              * In this app, we solve smaller problems and combine it to find results of larger one.
              */
-            int[] dp = new int[num+1];
+            int[] dp = new int[num + 1];
             dp[0] = 1;
 
             //tabular with iteration
@@ -32,7 +32,7 @@ namespace leetCode.Examples
             if (num == 0) return 1;
 
             //memoization with recurssion
-            int factorial = num * FactorialTopDown(num-1);
+            int factorial = num * FactorialTopDown(num - 1);
             return factorial;
         }
     }

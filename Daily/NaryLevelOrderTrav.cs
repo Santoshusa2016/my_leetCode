@@ -6,7 +6,17 @@ using System.Text;
 
 namespace leetCode.Daily
 {
-    internal class NaryLevelOrderTra
+    /*
+     * Ref: https://practice.geeksforgeeks.org/problems/minimum-cost-to-cut-a-board-into-squares/1
+     * LeetCode: 967
+     * hint:
+     * Date: 09/03/2022
+     * Test case: [3,1] [2,0], [3,7]
+     * Time Complexity: O(9*2^N)
+     * Space Complexity: O(2^N)
+     */
+
+    internal class NaryLevelOrderTrav
     {
         public IList<IList<int>> LevelOrder(Node root)
         {
@@ -19,25 +29,26 @@ namespace leetCode.Daily
             List<IList<int>> ans = new List<IList<int>>();
 
 
-            //step 02: explore all items in queue
+            //step 02: check if any element exist in queue
             while (level.Count>0)
             {
-                //step 03: find number of elements in each level
                 int noOfNodes = level.Count;
                 List<int> levels = new List<int>();
+
+                //step 03: start exploring each item in queue
                 for (int i = 0; i < noOfNodes; i++)
-                {
-                    //step 04: takeout each element in queue
+                {                    
                     Node element = (Node)level.Dequeue();
                     if (element.children != null)
                     {
                         foreach (var item in element.children)
                         {
+                            //step 04: add child nodes to queue
                             level.Enqueue(item);
                         }                        
                     }
 
-                    //step 05: at end of each node exploration add item to list
+                    //step 05: at end of each node exploration remove item from queue and add to list
                     levels.Add(element.val);
                 }
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace leetCode.Examples
+namespace leetCode.Maths
 {
     internal class Fibonacci
     {
@@ -11,7 +11,7 @@ namespace leetCode.Examples
         {
             //base criteria
             if (n <= 1) return n;
-            return (Recursive(n - 1) + Recursive(n - 2));
+            return Recursive(n - 1) + Recursive(n - 2);
         }
 
         public int Iterative(int n)

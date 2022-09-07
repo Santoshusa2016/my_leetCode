@@ -6,6 +6,7 @@ using leetCode.Daily;
 using leetCode.Easy;
 using leetCode.Examples;
 using leetCode.Examples.Maths;
+using leetCode.Maths;
 using leetCode.Medium;
 
 namespace leetCode
@@ -44,13 +45,12 @@ namespace leetCode
             //callPrintPrime();
 
 
-
             //callMinValue();
             //callNinjaCandies();
 
 
-            callNumsSameConsecDiff();
-
+            //callNumsSameConsecDiff();
+            callPruneTree();
             Console.ReadKey();
 
         }
@@ -239,7 +239,7 @@ namespace leetCode
 
         private static void callApproaches()
         {
-            Approach prob = new Approach();
+            Factorial prob = new Factorial();
             int factorialBottomUp = prob.FactorialBottomUp(5);
             int factorialTopDown = prob.FactorialTopDown(5);
 
@@ -266,12 +266,28 @@ namespace leetCode
 
         #endregion
 
-
         #region daily challenge
         private static void callNumsSameConsecDiff()
         {
             NumsSameConsecDiff prb = new NumsSameConsecDiff();
             prb.Driver(2,1);
+        }
+
+        private static void callNaryLevelOrderTraversal()
+        {
+            NaryLevelOrderTrav prb = new NaryLevelOrderTrav();
+            
+            NaryLevelOrderTrav.Node parentNode = new NaryLevelOrderTrav.Node();
+            parentNode.val = 1;
+            var level1Node = new NaryLevelOrderTrav.Node();
+
+        }
+
+        private static void callPruneTree()
+        {
+            PruneTree prb = new PruneTree();
+            prb.Driver();
+
         }
         #endregion
     }

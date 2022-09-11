@@ -50,7 +50,7 @@ namespace leetCode
 
 
             //callNumsSameConsecDiff();
-            callPruneTree();
+            callDailyChallenge();
             Console.ReadKey();
 
         }
@@ -65,7 +65,7 @@ namespace leetCode
 
         public static void callMaxProfit()
         {
-            MaxProfit prb = new MaxProfit();
+            var prb = new Easy.MaxProfit();
             Console.WriteLine(prb.GetMaxProfit(new int[] { 7, 6, 4, 3, 1 }));
         }
 
@@ -260,7 +260,7 @@ namespace leetCode
         private static void callNinjaCandies()
         {
             NinjaCandies prb = new NinjaCandies();
-            var retVal = prb.Solve(new int[] {1,2}, 2, 3);
+            var retVal = prb.Solve(new int[] { 1, 2 }, 2, 3);
             Console.WriteLine("the retVal is: " + retVal);
         }
 
@@ -270,22 +270,24 @@ namespace leetCode
         private static void callNumsSameConsecDiff()
         {
             NumsSameConsecDiff prb = new NumsSameConsecDiff();
-            prb.Driver(2,1);
+            prb.Driver(2, 1);
         }
 
         private static void callNaryLevelOrderTraversal()
         {
             NaryLevelOrderTrav prb = new NaryLevelOrderTrav();
-            
+
             NaryLevelOrderTrav.Node parentNode = new NaryLevelOrderTrav.Node();
             parentNode.val = 1;
             var level1Node = new NaryLevelOrderTrav.Node();
 
         }
 
-        private static void callPruneTree()
+        private static void callDailyChallenge()
         {
-            PruneTree prb = new PruneTree();
+            //PruneTree prb = new PruneTree();
+            //NumberOfWeakCharacters prb = new NumberOfWeakCharacters();
+            var prb = new Daily.MaxProfit();
             prb.Driver();
 
         }

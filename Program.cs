@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using leetCode.Contest;
 using leetCode.Daily;
 using leetCode.Easy;
 using leetCode.Examples;
@@ -287,7 +288,7 @@ namespace leetCode
         {
             //PruneTree prb = new PruneTree();
             //NumberOfWeakCharacters prb = new NumberOfWeakCharacters();
-            var prb = new Daily.MaxProfit();
+            var prb = new Motorola();
             prb.Driver();
 
         }

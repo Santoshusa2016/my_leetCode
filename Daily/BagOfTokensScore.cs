@@ -32,9 +32,7 @@ namespace leetCode.Daily
             while (begin <= end)
             {
                 /*
-                 * we cannot use power/votes becaus both can increase/decrease
-                 * != begin<length, end>0: we sell our max vote share to buy other, so we cannot buy it again since all
-                 * money is used. If we need to buy again we need to use Vote, but problem is to get max vote - Adani-NDTV
+                 * begin <= end we sell our vote to buy stock, so we should not buy stock we already bought
                  */
 
                 if (tokens[begin] <= power)

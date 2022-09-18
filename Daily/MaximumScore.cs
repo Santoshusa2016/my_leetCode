@@ -12,6 +12,7 @@ namespace leetCode.Daily
      * Test case:[1,2,3]:[3,2,1], [-5,-3,-3,-2,7,1]:[-10,-5,3,4,6]
      * Failed:
      * Hint: 0/1 Knapsack
+     * https://junminlee3.medium.com/how-to-solve-the-maximum-score-from-performing-multiplication-operations-problem-d28ce76dde6e
      * Time Complexity:
      * Space Complexity:
      */
@@ -30,6 +31,8 @@ namespace leetCode.Daily
                 //base condition
                 if (index == m) return 0;
 
+                if (dp[left, index] != null)
+                    return (int)dp[left, index];
 
                 //explore each node and store max in dp & return
                 return dp[left, index] ??= Math.Max(
@@ -49,6 +52,7 @@ namespace leetCode.Daily
                 for (int left = index; left >= 0; left--)
                 {
                     int right = nums.Length - 1 - index + left;
+                    Console.WriteLine("index:{0}, left:{1}, right:{2}", index, left, right);
                     dp[index, left] = Math.Max(
                         nums[left] * multipliers[index] + dp[index + 1, left + 1],
                         nums[right] * multipliers[index] + dp[index + 1, left]
@@ -64,7 +68,8 @@ namespace leetCode.Daily
         {
             int[] num = { -5, -3, -3, -2, 7, 1 };
             int[] multiplier = { -10, -5, 3, 4, 6 };
-            topDown(num, multiplier);
+            var retVal = bottomUp(num, multiplier);
+            Console.WriteLine("MaximumScore:{0}", retVal);
         }
     }
 }

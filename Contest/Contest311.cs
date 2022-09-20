@@ -5,6 +5,15 @@ using static leetCode.Daily.Tree2str;
 
 namespace leetCode.Contest
 {
+    /*
+     * Ref: https://leetcode.com/contest/weekly-contest-311
+     * Date: 09/18/2022
+     * Problems:
+     * Smallest Even Multiple
+     * Length of the Longest Alphabetical Continuous Substring
+     * Reverse Odd Levels of Binary Tree
+     * Sum of Prefix Scores of Strings
+     */
     internal class Contest311
     {
         public int SmallestEvenMultiple(int n)

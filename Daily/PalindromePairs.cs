@@ -9,61 +9,92 @@ namespace leetCode.Daily
      * Ref: https://leetcode.com/problems/palindrome-pairs/
      * LeetCode: 336. Palindrome Pairs
      * Date: 09/17/2022
-     * Test case:
+     * Test case:["abcd","dcba","lls","s","sssll"], ["bat","tab","cat"], ["a",""]
      * Failed:
-     * Hint:
+     * Hint:https://www.youtube.com/watch?v=iqM6xYQcsx0&t=136s
      * Time Complexity:
      * Space Complexity:
      */
     internal class PalindromePairs
     {
-        void Solve(string[] words)
+        /// <summary>
+        /// Naive solution
+        /// Time Complexity: o(n^3)
+        /// </summary>
+        /// <param name="words"></param>
+        /// <returns></returns>
+        IList<IList<int>> Solve(string[] words)
         {
             IList<IList<int>> paliandromePairs = new List<IList<int>>();
+            if (words.Length < 1)
+                return paliandromePairs;
 
-            for (int i = 0; i < words.Length-1; i++)
-            {   
-                for (int j = i+1; j < words.Length; j++)
+            for (int i = 0; i < words.Length - 1; i++)
+            {
+                for (int j = i + 1; j < words.Length; j++)
                 {
-                    if (IsPaliandrome(words[i], words[j]))
-                    {
-                    }
+                    //step 01: Add string a+b
+                    string temp = words[i] + words[j];
+                    if (IsPaliandrome(temp))
+                        paliandromePairs.Add(new List<int>(new int[] { i, j }));
 
+                    //step 02: Add string b+a
+                    temp = words[j] + words[i];
+                    if (IsPaliandrome(temp))
+                        paliandromePairs.Add(new List<int>(new int[] { j, i }));
                 }
-                
             }
+
+            return paliandromePairs;
         }
 
-        private bool IsPaliandrome(string v1, string v2, bool isconcat=false)
+        IList<IList<int>> SolveTrie(string[] words)
         {
-            bool isPaliandrome = false;
-            string reverseV1 = v1.Reverse().ToString();
-            if (reverseV1.Equals(v2))
+            IList<IList<int>> rets = new List<IList<int>>();
+
+            int[] indexes = new int[words.Length];
+            for (int i = 0; i < words.Length; i++)
             {
-                isPaliandrome = true;
+                indexes[i] = i;
             }
-            
-            //pre
-            string preVal = v1 + v2;
-            int median = preVal.Length / 2;
-            if(preVal.Length%2 == 0)
+
+            Tuple<int, int>[] combos = indexes.SelectMany(x => indexes, (x, y) => Tuple.Create(x, y)).ToArray();
+
+            foreach (Tuple<int, int> combo in combos)
             {
-                isPaliandrome = IsPaliandrome(preVal.Substring(0, median)
-                    , preVal.Substring(median,median), true);
+                if (combo.Item1 != combo.Item2)
+                {
+                    string s = words[combo.Item1] + words[combo.Item2];
+                    if (new string(string.Join("", s).Reverse().ToArray()) == s)
+                    {
+                        rets.Add(new List<int>() { combo.Item1, combo.Item2 });
+                    }
+                }
             }
-            //post
-            string postVal = v2 + v1;
-            if (postVal.Length % 2 == 0)
+
+            return rets;
+        }
+
+        private bool IsPaliandrome(string v1)
+        {
+            bool isPaliandrome = true;
+            int i = 0;
+            int j = v1.Length - 1;
+            for (; i < j; i++, j--)
             {
-                isPaliandrome = IsPaliandrome(postVal.Substring(0, median)
-                    , postVal.Substring(median, median), true);
+                if (v1[i] != v1[j])
+                {
+                    isPaliandrome = false;
+                    break;
+                }
             }
+
             return isPaliandrome;
         }
 
         public void Driver()
         {
-
+            Solve(new string[] { "abcd", "dcba", "lls", "s", "sssll" });
         }
     }
 }

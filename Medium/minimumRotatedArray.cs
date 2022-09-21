@@ -1,6 +1,3 @@
-/*
- * Ex: [4,5,6,7,0,1,2]
- */
 public class MinimumRotatedArray
 {
     public int FindMin(int[] nums) {

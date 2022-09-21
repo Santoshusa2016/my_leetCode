@@ -1,52 +1,32 @@
 using System;
 
+/*
+ * Ref: https://leetcode.com/problems/maximum-product-subarray/
+ * LeetCode: 2007
+ * Test case:[2,3,-2,4], [2,0,-1,8]
+ * Failed cases: [3,-1,4] Exp 4, Act 3
+                [-2,0,-1] Exp 0, Act 1:
+ */
+
 public class MaxProdArray
 {
-    //Dynammic Programming
-     public int GetMaxSubArrayKadens(int[] nums){
-        if(nums.Length == 0) return 0;
-        
-        //At every index we need to maintain max and min value. This will determine if at given index which one to use
-        int tempMin, tempMax, maxValue, tempCurrent;
+     public int GetMaxProduct(int[] nums){
+        if (nums == null || nums.Length == 0)
+            return 0;
 
-        tempMax = maxValue = nums[0];        
-        tempMin = tempCurrent = 1;
- 
+        int min = nums[0], max = nums[0], res = nums[0];
         for (int i = 1; i < nums.Length; i++)
         {
-            //if (tempMin == 0 && tempMax == 0){
-            if (nums[i] == 0){
-                //anything multipled by 0 is 0, so reset min, max to 1
-                tempMax = tempMin = 1;
-                continue;
-            }
+            //from 3 values below, choose min/max
+            int product1 = nums[i] * min;
+            int product2 = nums[i] * max;
+            int product3 = nums[i];
 
-            tempMin = (tempMin * nums[i]); 
-            tempMax = (tempMax * nums[i]);
+            max = Math.Max(Math.Max(product1, product2), product3);
+            min = Math.Min(Math.Min(product1, product2), product3);
 
-            if(tempMin > tempMax){
-                //Swap min and max
-                tempCurrent = tempMax;
-                tempMax = tempMin;
-                tempMin = tempCurrent;
-            }
-
-            //Compare min and max with the current element value
-            tempMax = Math.Max(tempMax, nums[i]);
-            tempMin = Math.Min(tempMin, nums[i]);
-
-            //update the maximum value
-            tempCurrent = Math.Max(tempMax, tempMin);
-            maxValue = maxValue > tempCurrent ? maxValue:tempCurrent;
+            res = Math.Max(res, max);
         }
-
-        return maxValue;
+        return res;
     }
-
-
-/*
-Cases Tested: [2,3,-2,4], [2,3,-2,-4], [2,0,-1,8]
-Failed cases: [3,-1,4] Exp 4, Act 3
-[-2,0,-1] Exp 0, Act 1
-*/
 }

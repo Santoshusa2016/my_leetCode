@@ -60,30 +60,6 @@ namespace leetCode.Daily
             return (int)number;
         }
 
-
-
-
-        int solveV3(int n)
-        {
-            long res = 0;
-            int shift = 0;
-            int m = 1000000007;
-
-            for (int i = 1; i <= n; i++)
-            {
-                //& is a bitwise operator and compares each operand bitwise.
-                if ((i & (i - 1)) == 0)
-                    shift++;
-
-                res = ((res << shift) | i) % m;
-                Console.WriteLine("res:{0}", res);
-            
-            }
-            return (int)(res % m);
-        }
-
-
-
         string ToBinary(int decimalNumber)
         {
             int remainder;

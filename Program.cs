@@ -52,6 +52,11 @@ namespace leetCode
 
             //callNumsSameConsecDiff();
             callDailyChallenge();
+
+
+
+            //callCodingContest();
+
             Console.ReadKey();
 
         }
@@ -194,7 +199,7 @@ namespace leetCode
         private static void callMaxProdArray()
         {
             MaxProdArray prb = new MaxProdArray();
-            Console.WriteLine(prb.GetMaxSubArrayKadens(new int[] { 2, 0, -1, 8 }));
+            Console.WriteLine(prb.GetMaxProduct(new int[] { 2, 0, -1, 8 }));
 
         }
 
@@ -288,9 +293,33 @@ namespace leetCode
         {
             //PruneTree prb = new PruneTree();
             //NumberOfWeakCharacters prb = new NumberOfWeakCharacters();
-            var prb = new Motorola();
+            //var prb = new Motorola();
+            //var prb = new BagOfTokensScore();
+            //var prb = new ValidUtf8();
+            //var prb = new PseudoPalindromicPaths();
+            //var prb = new FindOriginalArray();
+            //var prb = new MaximumScore();
+            //var prb = new PalindromePairs();
+            //var prb = new FindLength();
+            //var prb = new FindDuplicate();
+            //var prb = new SumEvenAfterQueries();
+            //var prb = new ReverseWords();
+            //var prb = new ConcatenatedBinary();
+            //var prb = new EquationsPossible();
+
+            var prb = new PushDominoes();
             prb.Driver();
 
+        }
+        #endregion
+
+        #region coding contest
+        private static void callCodingContest()
+        {
+            //var prb = new Contest311();
+
+            var prb = new Contest312();
+            prb.Driver();
         }
         #endregion
     }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using leetCode.Arrays;
 using leetCode.Contest;
 using leetCode.Daily;
 using leetCode.Easy;
@@ -51,11 +52,14 @@ namespace leetCode
 
 
             //callNumsSameConsecDiff();
-            callDailyChallenge();
+            //callDailyChallenge();
 
 
 
             //callCodingContest();
+
+
+            callArraySolns();
 
             Console.ReadKey();
 
@@ -306,10 +310,17 @@ namespace leetCode
             //var prb = new ReverseWords();
             //var prb = new ConcatenatedBinary();
             //var prb = new EquationsPossible();
-
-            var prb = new PushDominoes();
+            //var prb = new PushDominoes();
+            //var prb = new FindClosestElements();
+            //var prb = new NumDecodings();
+            //var prb = new MinCost();
+            //var prb = new GetSkyline();
+            //var prb = new HasPathSum();
+            //var prb = new TimeMap();
+            //var prb = new MyCalendarThree();
+            
+            var prb = new BreakPalindrome();
             prb.Driver();
-
         }
         #endregion
 
@@ -322,6 +333,16 @@ namespace leetCode
             prb.Driver();
         }
         #endregion
+
+
+        #region array
+        static void callArraySolns()
+        {
+            var prb = new LongestConsecutive();
+            prb.Driver();
+        }
+        #endregion
+
     }
 }
 

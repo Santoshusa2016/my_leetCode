@@ -5,6 +5,16 @@ using System.Text;
 
 namespace leetCode.Arrays
 {
+    /*
+    * Ref: https://leetcode.com/problems/group-anagrams/
+    * LeetCode: 49. Group Anagrams
+    * Tag: #hash, #medium
+    * Date: 10/12/2022
+    * Test case: ["eat","tea","tan","ate","nat","bat"],  [""]
+    * Time Complexity: 
+    * Space Complexity:
+    */
+
     internal class GroupAnagrams
     {
         IList<IList<string>> solve(string[] strs)

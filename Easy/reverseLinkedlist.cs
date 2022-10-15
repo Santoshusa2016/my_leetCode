@@ -1,4 +1,5 @@
-﻿using System;
+﻿using leetCode.Common;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -13,12 +14,12 @@ namespace leetCode.Easy
     */
     internal class reverseLinkedlist
     {
-        List<LinkedList.ListNode> singlyLinkedList = new List<LinkedList.ListNode>();
+        List<ListNode> singlyLinkedList = new List<ListNode>();
         public reverseLinkedlist(int[] linkedarray)
         {
             for (int i = 0; i <= linkedarray.Length - 1; i++)
             {
-                singlyLinkedList.Add(new LinkedList.ListNode(linkedarray[i]));
+                singlyLinkedList.Add(new ListNode(linkedarray[i]));
             }
 
             for (int i = 0; i <= singlyLinkedList.Count - 1; i++)
@@ -28,10 +29,10 @@ namespace leetCode.Easy
             }
         }
 
-        public LinkedList.ListNode ReverseList(LinkedList.ListNode head)
+        public ListNode ReverseList(ListNode head)
         {
             if (head == null) return null;
-            LinkedList.ListNode next, current, previous;
+            ListNode next, current, previous;
             next = current = singlyLinkedList[0];
             previous = null;
 
@@ -50,20 +51,7 @@ namespace leetCode.Easy
         }
     }
 
-    public class LinkedList
-    {
-        public ListNode Head { get; set; }
-        public class ListNode
-        {
-            public int val;
-            public ListNode next;
-            public ListNode(int val = 0, ListNode next = null)
-            {
-                this.val = val;
-                this.next = next;
-            }
-        }
-    }
+   
 
 }
 

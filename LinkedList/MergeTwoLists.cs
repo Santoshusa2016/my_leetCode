@@ -8,7 +8,7 @@ namespace leetCode.LinkedList
     * Ref: https://leetcode.com/problems/merge-two-sorted-lists/
     * LeetCode: 21. Merge Two Sorted Lists
     * Tag: #recursion, #easy
-    * Date: 10/13/2022
+    * Date: 10/12/2022
     * Test case: ["eat","tea","tan","ate","nat","bat"],  [""]
     * Time Complexity: 
     * Space Complexity:

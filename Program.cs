@@ -8,8 +8,10 @@ using leetCode.Daily;
 using leetCode.Easy;
 using leetCode.Examples;
 using leetCode.Examples.Maths;
+using leetCode.LinkedList;
 using leetCode.Maths;
 using leetCode.Medium;
+using leetCode.Common;
 
 namespace leetCode
 {
@@ -56,10 +58,11 @@ namespace leetCode
 
 
 
-            //callCodingContest();
+            callCodingContest();
 
 
-            callArraySolns();
+            //callArraySolns();
+            //callLinkedListSolns();
 
             Console.ReadKey();
 
@@ -125,19 +128,7 @@ namespace leetCode
         private static void callReverseLinkedList()
         {
             reverseLinkedlist prob = new reverseLinkedlist(new int[] { 1, 2, 3, 4, 5 });
-            var response = prob.ReverseList(new LinkedList.ListNode(1));
-            Console.WriteLine(response);
-        }
-
-        private static void callMergeLinkedList()
-        {
-            MergeSortedList prob = new MergeSortedList();
-            var link1 = new LinkedList.ListNode(1,
-                new LinkedList.ListNode(2, new LinkedList.ListNode(3, null)));
-            var link2 = new LinkedList.ListNode(1,
-               new LinkedList.ListNode(3, new LinkedList.ListNode(4, null)));
-
-            var response = prob.MergeTwoListsOpt(link1, link2);
+            var response = prob.ReverseList(new ListNode(1));
             Console.WriteLine(response);
         }
 
@@ -318,8 +309,9 @@ namespace leetCode
             //var prb = new HasPathSum();
             //var prb = new TimeMap();
             //var prb = new MyCalendarThree();
-            
-            var prb = new BreakPalindrome();
+            //var prb = new BreakPalindrome();
+
+            var prb = new LargestPerimeter();            
             prb.Driver();
         }
         #endregion
@@ -328,8 +320,9 @@ namespace leetCode
         private static void callCodingContest()
         {
             //var prb = new Contest311();
+            //var prb = new Contest312();
 
-            var prb = new Contest312();
+            var prb = new Contest315();
             prb.Driver();
         }
         #endregion
@@ -338,7 +331,19 @@ namespace leetCode
         #region array
         static void callArraySolns()
         {
-            var prb = new LongestConsecutive();
+            //var prb = new LongestConsecutive();
+            var prb = new GroupAnagrams();
+            prb.Driver();
+        }
+        #endregion
+
+        #region LinkedList
+        static void callLinkedListSolns()
+        {
+            //var prb = new LongestConsecutive();
+            //var prb = new MergeTwoLists();
+            //var prb = new DeleteNode();
+            var prb = new DeleteMiddle();
             prb.Driver();
         }
         #endregion

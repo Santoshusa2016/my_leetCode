@@ -12,6 +12,7 @@ using leetCode.LinkedList;
 using leetCode.Maths;
 using leetCode.Medium;
 using leetCode.Common;
+using my_leetCode.Daily;
 
 namespace leetCode
 {
@@ -54,11 +55,11 @@ namespace leetCode
 
 
             //callNumsSameConsecDiff();
-            //callDailyChallenge();
+            callDailyChallenge();
 
 
 
-            callCodingContest();
+            //callCodingContest();
 
 
             //callArraySolns();
@@ -310,8 +311,12 @@ namespace leetCode
             //var prb = new TimeMap();
             //var prb = new MyCalendarThree();
             //var prb = new BreakPalindrome();
+            //var prb = new LargestPerimeter();
+            //var prb = new CheckIfPangram();
+            //var prb = new MinDifficulty();
 
-            var prb = new LargestPerimeter();            
+            var prb = new CountAndSay();
+            
             prb.Driver();
         }
         #endregion
@@ -326,7 +331,6 @@ namespace leetCode
             prb.Driver();
         }
         #endregion
-
 
         #region array
         static void callArraySolns()

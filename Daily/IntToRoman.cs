@@ -4,6 +4,16 @@ using System.Linq;
 
 namespace my_leetCode.Daily
 {
+    /*
+     * Ref: https://leetcode.com/problems/integer-to-roman/
+     * LeetCode: 12. Integer to Roman
+     * Date: 10/20/2022
+     * hash: #medium, #dictionary
+     * Test case:4, 1
+     * Time Complexity:
+     * Space Complexity:
+     */
+
     internal class IntToRoman
     {
         //step01: create dict for mapping

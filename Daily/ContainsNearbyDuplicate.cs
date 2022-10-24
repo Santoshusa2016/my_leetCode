@@ -5,6 +5,15 @@ using System.Text;
 
 namespace my_leetCode.Daily
 {
+    /*
+     * Ref: https://leetcode.com/problems/contains-duplicate-ii/
+     * LeetCode: 219. Contains Duplicate II
+     * Date: 10/21/2022
+     * hash: #easy, #dictionary
+     * Test case:[1,2,3,1] k = 3; [1,0,1,1] k = 1;[1,2,3,1,2,3] k = 2
+     * Time Complexity:
+     * Space Complexity:
+     */
     internal class ContainsNearbyDuplicate
     {
         bool solve(int[] nums, int k)

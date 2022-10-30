@@ -10,7 +10,7 @@ namespace leetCode.Arrays
     * Ref: https://leetcode.com/problems/longest-consecutive-sequence/
     * LeetCode: 128. Longest Consecutive Sequence
     * Tag: #hash, #medium, #graph, #array
-    * Date: 10/11/2022
+    * Date: 10/29/2022
     * Test case: [100,4,200,1,3,2], [0,3,7,2,5,8,4,6,0,1]
     * Time Complexity: 
     * Space Complexity:
@@ -24,8 +24,8 @@ namespace leetCode.Arrays
                 return 0;
 
             Array.Sort(nums);
-            int maxConsecutiveInt, tempCounter;
-            maxConsecutiveInt = tempCounter = 1;
+            int maxCounter, tempCounter;
+            maxCounter = tempCounter = 1;
             int initialVal = nums[0];
 
             for (int i = 1; i < nums.Length; i++)
@@ -41,11 +41,11 @@ namespace leetCode.Arrays
                         tempCounter = 1;
                     }
                     initialVal = nums[i];
-                    maxConsecutiveInt = Math.Max(tempCounter, maxConsecutiveInt);
+                    maxCounter = Math.Max(tempCounter, maxCounter);
                 }
             }
 
-            return maxConsecutiveInt;
+            return maxCounter;
         }
 
         int solveV1(int[] nums)
@@ -64,7 +64,7 @@ namespace leetCode.Arrays
 
             for (int i = 0; i < nums.Length; i++)
             {
-                // with 1st element of longest subsequence
+                //create hash of unique values and iterate each num
                 if (!hash.Contains(nums[i] - 1))
                 {
                     sequence = nums[i];

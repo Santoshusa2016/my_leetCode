@@ -5,6 +5,17 @@ using System.Text;
 
 namespace my_leetCode.Daily
 {
+    /*
+    * Ref: https://leetcode.com/problems/make-the-string-great/submissions/
+    * LeetCode:1544. Make The String Great
+    * Tag: #easy
+    * Company:
+    * Date: 11/08/2022
+    * Test case:
+    * Time Complexity: 
+    * Space Complexity:
+    */
+
     internal class MakeGreatString
     {
         public string MakeGood(string s)

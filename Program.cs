@@ -318,8 +318,11 @@ namespace leetCode
             //var prb = new ContainsNearbyDuplicate();
             //var prb = new IntToRoman();
             //var prb = new CheckSubarraySum();
+            //var prb = new FindBall();
+            //var prb = new MinMutation();
+            //var prb = new Maximum69Number();
 
-            var prb = new FindBall();
+            var prb = new MakeGreatString();            
             prb.Driver();
         }
         #endregion

@@ -15,7 +15,6 @@ namespace my_leetCode.Daily
     * Time Complexity: 
     * Space Complexity:
     */
-
     internal class MakeGreatString
     {
         public string MakeGood(string s)

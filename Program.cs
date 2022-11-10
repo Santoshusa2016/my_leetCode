@@ -321,8 +321,9 @@ namespace leetCode
             //var prb = new FindBall();
             //var prb = new MinMutation();
             //var prb = new Maximum69Number();
+            //var prb = new MakeGreatString();
 
-            var prb = new MakeGreatString();            
+            var prb = new StockSpanner();            
             prb.Driver();
         }
         #endregion

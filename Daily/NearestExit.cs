@@ -12,13 +12,12 @@ namespace my_leetCode.Daily
     * Tag: #medium, #bfs, #queue
     * Company:
     * Date: 11/22/2022
-    * Time Complexity: 
-    * Space Complexity:
+    * Time Complexity: O(m*n)
+    * Space Complexity:O(m+n)
     */
-
     internal class NearestExit
     {
-        public int solve(char[][] maze, int[] entrance)
+        public int solveV2(char[][] maze, int[] entrance)
         {
             int rowCount = maze.GetLength(0) - 1;
             int colCount = maze[0].Length - 1;
@@ -78,7 +77,7 @@ namespace my_leetCode.Daily
             return -1;
         }
 
-        public int solveV2(char[][] maze, int[] entrance)
+        public int solve(char[][] maze, int[] entrance)
         {
             int rows = maze.Length;
             int cols = maze[0].Length;
@@ -101,6 +100,7 @@ namespace my_leetCode.Daily
 
             while (queue.Count > 0)
             {
+                //the iteration runs for every queue-fill. Not for every item in queue.
                 int s = queue.Count;
                 moves++;
                 while (s-- > 0)
@@ -130,23 +130,23 @@ namespace my_leetCode.Daily
 
         public void Driver()
         {
-            char[][] maze = new[] {
-                            new []{'+', '+', '.', '+' },
-                            new []{'.', '.', '.', '+' },
-                            new []{ '+', '+', '+', '.'}
-                            };
-
             //char[][] maze = new[] {
-            //                new []{'+','.','+','+','+','+','+'},
-            //                new []{'+','.','+','.','.','.','+'},
-            //                new []{'+','.','+','.','+','.','+'},
-            //                new []{'+','.','.','.','.','.','+'},
-            //                new []{'+','+','+','+','.','+','.'}
-            //                }; // {0, 1}
+            //                new []{'+', '+', '.', '+' },
+            //                new []{'.', '.', '.', '+' },
+            //                new []{ '+', '+', '+', '.'}
+            //                };// {1, 2}
 
-            int[] entrance = { 1,2 };
+            char[][] maze = new[] {
+                            new []{'+','.','+','+','+','+','+'},
+                            new []{'+','.','+','.','.','.','+'},
+                            new []{'+','.','+','.','+','.','+'},
+                            new []{'+','.','.','.','.','.','+'},
+                            new []{'+','+','+','+','.','+','.'}
+                            }; // {0, 1}
 
-            var retVal = solveV2(maze, entrance);
+            int[] entrance = { 0,1 };
+
+            var retVal = solve(maze, entrance);
             Console.WriteLine($"NearestExit:{retVal}");
         }
     }

@@ -8,7 +8,7 @@ namespace my_leetCode.Daily
     /*
     * Ref: https://leetcode.com/problems/middle-of-the-linked-list/
     * LeetCode:876. Middle of the Linked List
-    * Tag: #easy, #slow-fast pointer
+    * Tag: #easy, #slow-fast pointer, #linkedlist
     * Company:
     * Date: 12/05/2022
     * Time Complexity: 0(N)

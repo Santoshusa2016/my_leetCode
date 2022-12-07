@@ -11,8 +11,8 @@ namespace leetCode.Arrays
     * Tag: #hash, #medium
     * Date: 10/12/2022
     * Test case: ["eat","tea","tan","ate","nat","bat"],  [""]
-    * Time Complexity: 
-    * Space Complexity:
+    * Time Complexity: 2n
+    * Space Complexity: 3n
     */
 
     internal class GroupAnagrams
@@ -37,7 +37,7 @@ namespace leetCode.Arrays
                 }
                 else
                 {
-                    anagrams.Add(key, new List<string>(new string[] { str }));
+                    anagrams.Add(key, new List<string>{ str });
                 }
             }
 

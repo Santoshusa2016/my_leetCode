@@ -36,10 +36,6 @@ namespace leetCode.Arrays
                     {
                         tempCounter++;
                     }
-                    else
-                    {
-                        tempCounter = 1;
-                    }
                     initialVal = nums[i];
                     maxCounter = Math.Max(tempCounter, maxCounter);
                 }
@@ -64,11 +60,12 @@ namespace leetCode.Arrays
 
             for (int i = 0; i < nums.Length; i++)
             {
-                //create hash of unique values and iterate each num
-                if (!hash.Contains(nums[i] - 1))
+                //check if lesser number exist in set
+                if (hash.Contains(nums[i] - 1) == false)
                 {
                     sequence = nums[i];
-                    // sequence will reach to last element of longest subsequence
+
+                    //sequence will reach to last element of longest subsequence
                     while (hash.Contains(sequence))
                         sequence++;
 

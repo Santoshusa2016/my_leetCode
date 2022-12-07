@@ -3,7 +3,7 @@ namespace leetCode.Arrays
     /*
     * Ref: https://leetcode.com/problems/longest-substring-without-repeating-characters/
     * LeetCode: 3. Longest Substring Without Repeating Characters
-    * Tag: #slidingwindow, #medium
+    * Tag: #slidingwindow, #medium, #string
     * Date: 10/29/2022
     * Test case: abcabcbb, bbbbb, pwwkew
     * Time Complexity: 
@@ -25,7 +25,7 @@ namespace leetCode.Arrays
 
             for (int i = 0; i < (s.Length - 1); i++)
             {
-                string substr = s.Substring(i, 1);
+                var substr = s.Substring(i, 1);
                 for (int j = i + 1; j < s.Length; j++)
                 {
                     string nxtSubStr = s.Substring(j, 1);
@@ -51,7 +51,6 @@ namespace leetCode.Arrays
             if (s.Length <= 1) return s.Length;
             if (s.Length == 2)
             {
-
                 if (s.Substring(0, 1) != s.Substring(1, 1))
                     return 2;
                 else return 1;

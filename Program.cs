@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
 using leetCode.Arrays;
-using leetCode.Contest;
 using leetCode.Daily;
 using leetCode.Easy;
 using leetCode.Examples;
 using leetCode.Examples.Maths;
-using leetCode.LinkedList;
 using leetCode.Maths;
 using leetCode.Medium;
 using leetCode.Common;
 using my_leetCode.Daily;
+using my_leetCode.Contest;
+using my_leetCode.Medium;
 
 namespace leetCode
 {
@@ -55,9 +53,9 @@ namespace leetCode
 
 
             //callNumsSameConsecDiff();
+            
+            
             callDailyChallenge();
-
-
 
             //callCodingContest();
 
@@ -186,12 +184,6 @@ namespace leetCode
             Console.ReadKey();
         }
 
-        public static void callProductExceptSelf()
-        {
-            ProductExceptSelf prob = new ProductExceptSelf();
-            prob.GetProductExceptSelf(new int[] { 1, 2, 3, 4 });
-        }
-
         private static void callMaxProdArray()
         {
             MaxProdArray prb = new MaxProdArray();
@@ -229,7 +221,6 @@ namespace leetCode
             uniquePaths prb = new uniquePaths();
             Console.WriteLine(prb.Solve(3, 2));
         }
-
         #endregion
 
         #region Maths
@@ -322,8 +313,12 @@ namespace leetCode
             //var prb = new MinMutation();
             //var prb = new Maximum69Number();
             //var prb = new MakeGreatString();
+            //var prb = new StockSpanner();
+            //var prb = new RemoveDuplicates();
+            //var prb = new Calculate();
+            //var prb = new NearestExit();
 
-            var prb = new StockSpanner();            
+            var prb = new OddEvenList();
             prb.Driver();
         }
         #endregion
@@ -333,8 +328,9 @@ namespace leetCode
         {
             //var prb = new Contest311();
             //var prb = new Contest312();
+            //var prb = new Contest315();
 
-            var prb = new Contest315();
+            var prb = new Contest319();
             prb.Driver();
         }
         #endregion
@@ -342,8 +338,8 @@ namespace leetCode
         #region array
         static void callArraySolns()
         {
-            //var prb = new LongestConsecutive();
-            var prb = new GroupAnagrams();
+            var prb = new LongestConsecutive();
+            //var prb = new GroupAnagrams();
             prb.Driver();
         }
         #endregion
@@ -354,7 +350,8 @@ namespace leetCode
             //var prb = new LongestConsecutive();
             //var prb = new MergeTwoLists();
             //var prb = new DeleteNode();
-            var prb = new DeleteMiddle();
+            //var prb = new DeleteMiddle();
+            var prb = new ReorderList();
             prb.Driver();
         }
         #endregion

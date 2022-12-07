@@ -1,4 +1,8 @@
-namespace leetCode.Arrays
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace my_leetCode.Arrays
 {
     /*
     * Ref: https://leetcode.com/problems/longest-consecutive-sequence/
@@ -22,8 +26,6 @@ namespace leetCode.Arrays
                 outputArray[i] = outputArray[i - 1] * nums[i - 1];
             }
 
-
-
             int tempMultiplier = 1;
             for (int i = nums.Length - 2; i >= 0; i--)
             {
@@ -32,7 +34,6 @@ namespace leetCode.Arrays
                 outputArray[i] = outputArray[i] * (tempMultiplier);
 
             }
-
             return outputArray;
         }
 
@@ -44,8 +45,8 @@ namespace leetCode.Arrays
             {
                 outputArray[i] = outputArray[i - 1] * nums[i];
             }
-
         }
+
         private void SuffixProduct(int[] nums)
         {
             int[] outputArray = new int[nums.Length];
@@ -58,5 +59,3 @@ namespace leetCode.Arrays
 
     }
 }
-
-

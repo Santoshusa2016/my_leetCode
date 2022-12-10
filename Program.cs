@@ -317,8 +317,9 @@ namespace leetCode
             //var prb = new RemoveDuplicates();
             //var prb = new Calculate();
             //var prb = new NearestExit();
+            //var prb = new OddEvenList();
 
-            var prb = new OddEvenList();
+            var prb = new MaxProduct();
             prb.Driver();
         }
         #endregion

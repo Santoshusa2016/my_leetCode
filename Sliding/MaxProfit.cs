@@ -1,12 +1,13 @@
-
-namespace leetCode.Easy
+namespace my_leetCode.Sliding
 {
     /*
-    * Question: 
-    * Hint:
-    * Test cases: [7,6,4,3,1] [7,1,5,3,6,4]
-    * Failed cases: [2,4,1]
-    * Explain:
+    * Ref: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+    * LeetCode: 121. Best Time to Buy and Sell Stock
+    * Tag: #slidingwindow, #easy, #graph, #array
+    * Date: 12/14/2022
+    * Test case: [7,1,5,3,6,4], [7,6,4,3,1]
+    * Time Complexity: O(n)
+    * Space Complexity: O(1)
     */
     public class MaxProfit
     {
@@ -29,7 +30,7 @@ namespace leetCode.Easy
                 }
 
                 //Temp profit is created to determine max profit in each iteration
-                tempProfit = (prices[maxIndex] - prices[minIndex]);
+                tempProfit = prices[maxIndex] - prices[minIndex];
 
                 maxProfit = maxProfit > tempProfit
                             ? maxProfit : tempProfit;

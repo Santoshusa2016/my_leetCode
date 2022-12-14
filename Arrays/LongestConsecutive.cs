@@ -36,9 +36,9 @@ namespace leetCode.Arrays
                     {
                         tempCounter++;
                     }
-                    initialVal = nums[i];
-                    maxCounter = Math.Max(tempCounter, maxCounter);
+                    initialVal = nums[i];                    
                 }
+                maxCounter = Math.Max(tempCounter, maxCounter);
             }
 
             return maxCounter;

@@ -11,6 +11,9 @@ using leetCode.Common;
 using my_leetCode.Daily;
 using my_leetCode.Contest;
 using my_leetCode.Medium;
+using my_leetCode.Sliding;
+using my_leetCode.Arrays;
+using my_leetCode.Dynammic;
 
 namespace leetCode
 {
@@ -75,12 +78,6 @@ namespace leetCode
             Console.WriteLine(prb.FindTargetWithHash(new int[] { 3, 2, 4 }, 6));
         }
 
-        public static void callMaxProfit()
-        {
-            var prb = new Easy.MaxProfit();
-            Console.WriteLine(prb.GetMaxProfit(new int[] { 7, 6, 4, 3, 1 }));
-        }
-
         private static void callContainsDuplicate()
         {
             ContainsDuplicate dups = new ContainsDuplicate();
@@ -97,7 +94,7 @@ namespace leetCode
         private static void callMaxSubArray()
         {
             MaxSubArray prb = new MaxSubArray();
-            Console.WriteLine(prb.GetMaxSubArrayDC(new int[] { -2, 3, 0, 2, -2, 3 }));
+            Console.WriteLine(prb.GetMaxSubArrayDC(new int[] { 8, -19, 5, -4, 20 }));
 
         }
 
@@ -205,14 +202,8 @@ namespace leetCode
 
         private static void callLongestSubSeq()
         {
-            LongestSubsequence prb = new LongestSubsequence();
-            Console.WriteLine(prb.GetLongestSubsequence(new int[] { 0, 1, 0, 3, 2, 3 }));
-        }
-
-        private static void callLongestCommonSubSeq()
-        {
-            LongestCommonSubseq prb = new LongestCommonSubseq();
-            Console.WriteLine(prb.GetLongestCommonSubseq("stone", "longest"));
+            LongestIncreasingSeq prb = new LongestIncreasingSeq();
+            Console.WriteLine(prb.LIS(new int[] { 0, 1, 0, 3, 2, 3 }));
         }
 
         private static void callUniquePath()
@@ -318,8 +309,9 @@ namespace leetCode
             //var prb = new Calculate();
             //var prb = new NearestExit();
             //var prb = new OddEvenList();
+            //var prb = new MaxProduct();
 
-            var prb = new MaxProduct();
+            var prb = new NumTilings();
             prb.Driver();
         }
         #endregion

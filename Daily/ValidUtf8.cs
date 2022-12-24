@@ -9,10 +9,9 @@ namespace leetCode.Daily
      * LeetCode: 393. UTF-8 Validation 
      * Date: 09/13/2022
      * Test case: [197,130,1]; [235,140,4]; [100,200,300,400],200
-     * Failed:
-     * Hint: sort the array and take 2 pointer, begin pointer- using power buy stocks, end pointer using vote buy max stock
-     * Time Complexity:
-     * Space Complexity:
+     * Tag: #medium, #array, #bitmanipulation
+     * Time Complexity:O(n)
+     * Space Complexity: O(1)
      */
     internal class ValidUtf8
     {
@@ -20,7 +19,6 @@ namespace leetCode.Daily
         {
             //step01: create an integer to store the length consecutive byte calc
             int bytesRemain = 0;
-            
             
             for (int i = 0; i < nums.Length; i++)
             {

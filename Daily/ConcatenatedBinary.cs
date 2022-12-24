@@ -10,7 +10,7 @@ namespace leetCode.Daily
      * LeetCode: 1680. Concatenation of Consecutive Binary Numbers
      * Date: 09/23/2022
      * Test case: 1, 3, 12, 42
-     * Failed:
+     * Tag: #medium, #array, #bitmanipulation
      * Time Complexity:
      * Space Complexity:
      */

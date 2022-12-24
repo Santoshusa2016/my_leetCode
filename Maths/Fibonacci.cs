@@ -9,6 +9,7 @@ namespace leetCode.Maths
         //find nth fibonacci term
         public int Recursive(int n)
         {
+            //top-down
             //base criteria
             if (n <= 1) return n;
             return Recursive(n - 1) + Recursive(n - 2);
@@ -16,6 +17,7 @@ namespace leetCode.Maths
 
         public int Iterative(int n)
         {
+            //bottom-up Dynammic Programming
             int f0 = 0;
             int f1 = 1;
             for (int i = 2; i <= n; i++)

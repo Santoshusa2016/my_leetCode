@@ -10,8 +10,8 @@ namespace my_leetCode.Arrays
     * Tag: #array, #medium, #prefix, #suffix
     * Date: 10/29/2022
     * Test case: [1,2,3,4]
-    * Time Complexity: 
-    * Space Complexity:
+    * Time Complexity: O(n)
+    * Space Complexity: O(n)
     */
     public class ProductExceptSelf
     {

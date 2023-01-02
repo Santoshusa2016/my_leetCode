@@ -185,7 +185,6 @@ namespace leetCode
         {
             MaxProdArray prb = new MaxProdArray();
             Console.WriteLine(prb.GetMaxProduct(new int[] { 2, 0, -1, 8 }));
-
         }
 
         private static void callMinRotatedArray()
@@ -310,8 +309,11 @@ namespace leetCode
             //var prb = new NearestExit();
             //var prb = new OddEvenList();
             //var prb = new MaxProduct();
+            //var prb = new NumTilings();
+            //var prb = new CanJump();
+            //var prb = new MaximumBags();
 
-            var prb = new NumTilings();
+            var prb = new DetectCapitalUse();
             prb.Driver();
         }
         #endregion

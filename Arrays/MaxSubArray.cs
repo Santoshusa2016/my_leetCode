@@ -17,7 +17,7 @@ namespace my_leetCode.Arrays
 
     internal class MaxSubArray
     {
-        public int GetMaxSubArrayKadens(int[] nums)
+        public int GetMaxSubArray(int[] nums)
         {
             if (nums.Length == 0) return 0;
             int currMax, maxValue;

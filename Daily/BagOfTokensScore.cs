@@ -11,9 +11,10 @@ namespace leetCode.Daily
      * Date: 09/12/2022
      * Test case:[100],50; [100,200],150; [100,200,300,400],200
      * Failed:
-     * Hint: sort the array and take 2 pointer, begin pointer- using power buy stocks, end pointer using vote buy max stock
-     * Time Complexity:
-     * Space Complexity:
+     * Hint: sort the array and take 2 pointer, 
+     * begin pointer - use power buy stocks, end pointer - use vote buy max stock
+     * Time Complexity: O(n)
+     * Space Complexity: O(1)
      */
     internal class BagOfTokensScore
     {
@@ -31,30 +32,24 @@ namespace leetCode.Daily
 
             while (begin <= end)
             {
-                /*
-                 * begin <= end we sell our vote to buy stock, so we should not buy stock we already bought
-                 */
-
                 if (tokens[begin] <= power)
                 {
-                    //step 3: if tokens[i] < power ->buy
+                    //step 02: if tokens[i] < power ->buy
                     votes += 1;
                     power -= tokens[begin];
                     begin++;
                 }
                 else if (votes > 0)
                 {
-                    //step 4: if tokens[i]> power -> use score to buy
+                    //step 3: if tokens[i]> power -> use vote to buy most shares
                     votes -= 1;
                     power += tokens[end];
                     end--;
                 }
                 else { 
-                    //step 05: default case when you dont have enough vote/score & money/power to buy
+                    //step 04: default case when you dont have enough vote/score & money/power to buy
                     break;
                 }
-
-                //maxVote: since in each iteration votes can vary and we need count of max.
                 maxVotes = Math.Max(maxVotes, votes);
             }
 

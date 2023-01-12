@@ -312,8 +312,9 @@ namespace leetCode
             //var prb = new NumTilings();
             //var prb = new CanJump();
             //var prb = new MaximumBags();
+            //var prb = new DetectCapitalUse();
 
-            var prb = new DetectCapitalUse();
+            var prb = new MaxPoints();
             prb.Driver();
         }
         #endregion

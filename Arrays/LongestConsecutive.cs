@@ -78,10 +78,8 @@ namespace leetCode.Arrays
 
         public void Driver()
         {
-
             var inputVal = new int[] { 0, 3, 7, 2, 5, 8, 4, 6, 0, 1 };
             int retVal = solveV1(inputVal);
-
             Console.WriteLine("LongestConsecutive:{0}", retVal);
         }
     }

@@ -14,6 +14,7 @@ using my_leetCode.Medium;
 using my_leetCode.Sliding;
 using my_leetCode.Arrays;
 using my_leetCode.Dynammic;
+using my_leetCode.Recursion;
 
 namespace leetCode
 {
@@ -58,13 +59,13 @@ namespace leetCode
             //callNumsSameConsecDiff();
             
             
-            callDailyChallenge();
-
+             //callDailyChallenge();
             //callCodingContest();
 
 
             //callArraySolns();
             //callLinkedListSolns();
+            callRecursiveSolns();
 
             Console.ReadKey();
 
@@ -74,7 +75,7 @@ namespace leetCode
         #region Easy
         public static void callTwoSums()
         {
-            TwoSum prb = new TwoSum();
+            leetCode.Easy.TwoSum prb = new leetCode.Easy.TwoSum();
             Console.WriteLine(prb.FindTargetWithHash(new int[] { 3, 2, 4 }, 6));
         }
 
@@ -268,6 +269,7 @@ namespace leetCode
 
         private static void callDailyChallenge()
         {
+            var prb = new Daily.MaxProfit();
             //PruneTree prb = new PruneTree();
             //NumberOfWeakCharacters prb = new NumberOfWeakCharacters();
             //var prb = new Motorola();
@@ -313,10 +315,12 @@ namespace leetCode
             //var prb = new CanJump();
             //var prb = new MaximumBags();
             //var prb = new DetectCapitalUse();
+            //var prb = new MaxPoints();
 
-            var prb = new MaxPoints();
+            //var prb = new CountSubTrees();
             prb.Driver();
         }
+
         #endregion
 
         #region coding contest
@@ -334,8 +338,9 @@ namespace leetCode
         #region array
         static void callArraySolns()
         {
-            var prb = new LongestConsecutive();
+            //var prb = new LongestConsecutive();
             //var prb = new GroupAnagrams();
+            var prb = new my_leetCode.Arrays.TwoSum();
             prb.Driver();
         }
         #endregion
@@ -348,6 +353,15 @@ namespace leetCode
             //var prb = new DeleteNode();
             //var prb = new DeleteMiddle();
             var prb = new ReorderList();
+            prb.Driver();
+        }
+        #endregion
+
+        #region recursion
+        static void callRecursiveSolns()
+        {
+            //var prb = new MaxProfit_BS2();
+            var prb = new MaxProfit_Cooldown();
             prb.Driver();
         }
         #endregion

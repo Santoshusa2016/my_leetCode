@@ -118,6 +118,8 @@ namespace my_leetCode.Daily
                 new int[]{2, 6},
                 }, "abaedcd");
 
+            //[0,1],[1,2],[2,3],[3,4],[4,5],[5,6], "aaabaaa"
+            //[[0,2],[0,3],[1,2]] , "aeed"
             Console.WriteLine($"CountSubTrees:{retVal.Length}");
         }
     }
